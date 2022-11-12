@@ -1,8 +1,5 @@
-from main import menuPrincipal, volverMenuP
-
 # Como leer un archivo de excel
 import openpyxl
-
 
 filesheet = "./Jugadores.xlsx"
 
@@ -58,9 +55,10 @@ def nuevoUsuario():
     print ("\n 1) Menu principal \n 2) Volver")
     opcion = int(input("Ingrese la opcion a la que desea ingresar: "))
     if opcion == 1:
-     menuPrincipal()
+        import main as mn
+        mn.menuPrincipal()
     else:
-     menuJugadores()
+        menuJugadores()
 
 def eliminarJugador():
 
@@ -86,9 +84,10 @@ def eliminarJugador():
         "\n2) Volver")
     opcion = int(input("Ingrese la opcion a la que desea ingresar: "))
     if opcion == 1:
-     menuPrincipal()
+        import main as mn
+        mn.menuPrincipal()
     else:
-     menuJugadores()
+        menuJugadores()
         
 def mostrarJugadores():
     print("\nJugadores Disponibles")
@@ -104,9 +103,10 @@ def mostrarJugadores():
         "\n2) Volver")
     opcion = int(input("Ingrese la opcion a la que desea ingresar: "))
     if opcion == 1:
-     menuPrincipal()
+        import main as mn
+        mn.menuPrincipal()
     else:
-     menuJugadores()
+        menuJugadores()
 
 def menuJugadores():
     print ("\n1) Agregar jugador",
@@ -124,5 +124,6 @@ def menuJugadores():
         #Código ahorcado
         mostrarJugadores()
     if opcion == 4:
-        #codigo agregar jugadores    
-        volverMenuP()
+        #codigo agregar jugadores
+        import main as mn    
+        mn.volverMenuP()

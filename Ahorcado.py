@@ -1,9 +1,10 @@
-from main import menuPrincipal
+
+import getpass
+from datetime import datetime
 
 # Como leer un archivo de excel
 import openpyxl
-import getpass
-from datetime import datetime
+
 
 filesheet = "./Jugadores.xlsx"
 
@@ -12,7 +13,6 @@ wb = openpyxl.load_workbook(filesheet)
 
 # Fijar la hoja
 hojaPlayers = wb.get_sheet_by_name('Players')
-
 
 def ahorcado():
 
@@ -202,15 +202,21 @@ def ahorcado():
         
         input("PULSE ENTER PARA CONTINUAR\n")
 
-        #Opciones de final del juego
+        finalJuego()
+        
+    else:
+        print("No existen jugadores suficientes para jugar")
+
+
+def finalJuego():
+    #Opciones de final del juego
         print("\n1) ¿Desea volver a jugar? \n2) Volver al menú principal \n3) Salir")
-        seleccion = input()
+        seleccion = int(input())
 
         if(seleccion == 1):
             ahorcado()
         elif(seleccion == 2):
-            menuPrincipal()
+            import main
+            main.menuPrincipal()
         else:
             quit()
-    else:
-              print("No existen jugadores suficientes para jugar")
