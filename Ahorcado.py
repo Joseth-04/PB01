@@ -1,3 +1,5 @@
+from main import menuPrincipal
+
 # Como leer un archivo de excel
 import openpyxl
 import getpass

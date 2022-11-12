@@ -1,7 +1,11 @@
+from Ahorcado import ahorcado
+from Usuarios import menuJugadores
+
 # Como leer un archivo de excel
 import openpyxl
 import getpass
 from datetime import datetime
+
 
 filesheet = "./Jugadores.xlsx"
 

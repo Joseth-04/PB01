@@ -1,5 +1,8 @@
+from main import menuPrincipal, volverMenuP
+
 # Como leer un archivo de excel
 import openpyxl
+
 
 filesheet = "./Jugadores.xlsx"
 
