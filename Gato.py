@@ -1,5 +1,5 @@
 from datetime import datetime
-
+#Código acomplado, verificado y reparado SubTeam 1 Angelo y Joseth
 # Como leer un archivo de excel
 import openpyxl
 
