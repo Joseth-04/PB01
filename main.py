@@ -18,7 +18,7 @@ def volverMenuP():
   
 def menuPrincipal():
     print("=========================================\n")
-    print("=============CENTRAL DE JUEGOS===========\n")
+    print("============CENTRAL DE JUEGOS============\n")
     print("=========================================")
     print ("\n1) Jugadores",
     "\n2) Juego Gato",
@@ -33,7 +33,7 @@ def menuPrincipal():
         users.menuJugadores()
     if opcion == 2:
         #codigo agregar jugadores    
-        cat.gato()
+        cat.gatoGame()
     if opcion == 3:
         #Código ahorcado
         ahor.ahorcado()

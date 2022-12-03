@@ -1,5 +1,5 @@
 from datetime import datetime
-#Código acomplado, verificado y reparado SubTeam 1 Angelo y Joseth
+
 # Como leer un archivo de excel
 import openpyxl
 
@@ -9,7 +9,7 @@ filesheet = "./Jugadores.xlsx"
 wb = openpyxl.load_workbook(filesheet)
 
 # Fijar la hoja
-hojaPlayers = wb.get_sheet_by_name('Players')
+hojaPlayers = wb['Players']
 
 #declarar matriz
 tablero = []
@@ -31,81 +31,76 @@ def pintarTablero(tablero):
     print(tablero[2][0], " | ", tablero[2][1], " | ", tablero[2][2],)
 
 def verificar(tablero):
+    #If para validacion del jugador X
     if(tablero[0][0]=="X" and tablero[0][1]=="X"and tablero[0][2]=="X"):  
-        print("Ganaste jugador X")
+        
         vGanador=1
     elif(tablero[1][0]=="X"and tablero[1][1]=="X"and tablero[1][2]=="X"):
-        print("Ganaste jugador X")
+        
         vGanador=1
     elif(tablero[2][0]=="X"and tablero[2][1]=="X"and tablero[2][2]=="X"):
-        print("Ganaste jugador X")
+        
         vGanador=1
     elif(tablero[0][0]=="X" and tablero[1][0]=="X"and tablero[2][0]=="X"):  
-        print("Ganaste jugador X")
+        
         vGanador=1
     elif(tablero[0][1]=="X"and tablero[1][1]=="X"and tablero[2][1]=="X"):
-        print("Ganaste jugador X")
+        
         vGanador=1
     elif(tablero[0][2]=="X"and tablero[1][2]=="X"and tablero[2][2]=="X"):
-        print("Ganaste jugador X")
+        
         vGanador=1
     elif(tablero[0][0]=="X" and tablero[1][1]=="X"and tablero[2][2]=="X"):  
-        print("Ganaste jugador X")
+        
         vGanador=1
     elif(tablero[0][2]=="X"and tablero[1][1]=="X"and tablero[2][0]=="X"):
-        print("Ganaste jugador X")
+        
         vGanador=1
+
+    #If para validacion del jugador O    
     elif(tablero[0][0]=="O" and tablero[0][1]=="O"and tablero[0][2]=="O"):  
-        print("Ganaste jugador")
+       
         vGanador=1
     elif(tablero[1][0]=="O"and tablero[1][1]=="O"and tablero[1][2]=="O"):
-        print("Ganaste jugador")
+        
         vGanador=1
     elif(tablero[2][0]=="O"and tablero[2][1]=="O"and tablero[2][2]=="O"):
-        print("Ganaste jugador")
+        
         vGanador=1
     elif(tablero[0][0]=="O" and tablero[1][0]=="O"and tablero[2][0]=="O"):  
-        print("Ganaste jugador")
+        
         vGanador=1
     elif(tablero[0][1]=="O"and tablero[1][1]=="O"and tablero[2][1]=="O"):
-        print("Ganaste jugador")
+        
         vGanador=1
     elif(tablero[0][2]=="O"and tablero[1][2]=="O"and tablero[2][2]=="O"):
-        print("Ganaste jugador")
+        
         vGanador=1
     elif(tablero[0][0]=="O" and tablero[1][1]=="O"and tablero[2][2]=="O"):  
-        print("Ganaste jugador")
+        
         vGanador=1
     elif(tablero[0][2]=="O"and tablero[1][1]=="O"and tablero[2][0]=="O"):
-        print("Ganaste jugador")
+        
         vGanador=1
     
-    elif(tablero[0][0]=="X"and tablero[0][1]=="X"and tablero[0][2]=="O"):
-        print("Empate")
+    #If para validacion de EMPATE
+    elif(tablero[0][0]=="X"and tablero[0][1]=="X"and tablero[0][2]=="O"):      
         vGanador=2
-    elif(tablero[1][0]=="X"and tablero[1][1]=="O" and tablero[1][2]=="X"):
-        print("Empate")
+    elif(tablero[1][0]=="X"and tablero[1][1]=="O" and tablero[1][2]=="X"):        
         vGanador=2
-    elif(tablero[2][0]=="O"and tablero[2][1]=="O"and tablero[2][2]=="X"):
-        print("Empate")
+    elif(tablero[2][0]=="O"and tablero[2][1]=="O"and tablero[2][2]=="X"):        
         vGanador=2
-    elif(tablero[0][0]=="O"and tablero[0][1]=="X"and tablero[0][2]=="O"):
-        print("Empate")
+    elif(tablero[0][0]=="O"and tablero[0][1]=="X"and tablero[0][2]=="O"):       
         vGanador=2
-    elif(tablero[1][0]=="X"and tablero[1][1]=="X" and tablero[1][2]=="O"):
-        print("Empate")
+    elif(tablero[1][0]=="X"and tablero[1][1]=="X" and tablero[1][2]=="O"):     
         vGanador=2
-    elif(tablero[2][0]=="X"and tablero[2][1]=="O"and tablero[2][2]=="X"):
-        print("Empate")
+    elif(tablero[2][0]=="X"and tablero[2][1]=="O"and tablero[2][2]=="X"):        
         vGanador=2
-    elif(tablero[0][0]=="O"and tablero[0][1]=="X"and tablero[0][2]=="O"):
-        print("Empate")
+    elif(tablero[0][0]=="O"and tablero[0][1]=="X"and tablero[0][2]=="O"):        
         vGanador=2
-    elif(tablero[1][0]=="X"and tablero[1][1]=="X" and tablero[1][2]=="O"):
-        print("Empate")
+    elif(tablero[1][0]=="X"and tablero[1][1]=="X" and tablero[1][2]=="O"):        
         vGanador=2
-    elif(tablero[2][0]=="O"and tablero[2][1]=="O"and tablero[2][2]=="X"):
-        print("Empate")
+    elif(tablero[2][0]=="O"and tablero[2][1]=="O"and tablero[2][2]=="X"):        
         vGanador=2
     else: 
         vGanador=0
@@ -116,6 +111,15 @@ def gatoGame():
     winDos=False
     winUno=False
     vGanador=0
+    ganadorID = ""
+
+    print("\n==========================================")
+    print("\n================JUEGO GATO================")
+    print("\n==========================================") 
+
+    input("\nPresione ENTER para iniciar")
+
+    print("\n==========SELECCION DE JUGADORES==========\n")
 
     #Valida cuanto jugadores existen
     for i in range(2, hojaPlayers.max_row+1):
@@ -142,15 +146,17 @@ def gatoGame():
     for cell in hojaPlayers["A"]:
         if cell.value == selectUno:
             jugadorUno = hojaPlayers[f"B{cell.row}"].value #Asignamos el nombre del usuario al jugador1
+            jugadorUnoID = selectUno
 
     for cell in hojaPlayers["A"]:
         if cell.value == selectDos:
             jugadorDos = hojaPlayers[f"B{cell.row}"].value #Asignamos el nombre del usuario al jugador2
+            jugadorDosID = selectDos
 
 
-    print("\n", "\n")
+    print("\n")
     print(jugadorUno," VS ", jugadorDos)
-    print("\n", "\n")
+    print("\n")
 
     #reiniciar tablero
     tablero = []
@@ -176,12 +182,13 @@ def gatoGame():
             pintarTablero(tablero)
 
             if (verificar(tablero) == 1):
-                print("El ganador es: " + jugadorUno)
+                ganadorID = jugadorUnoID
                 repetir = False
                 winUno = True
                 break
+            #elif para identificar empate
             elif (verificar(tablero) == 2):
-                print("Empate")
+                ganadorID = 0
                 repetir = False
                 break
             else:
@@ -196,31 +203,75 @@ def gatoGame():
             pintarTablero(tablero)
                 
             if (verificar(tablero) == 1):
-                print("El ganador es: " + jugadorDos)
+                ganadorID = jugadorDosID
                 repetir = False
                 winDos = True
                 break
+            #elif para identificar empate
             elif (verificar(tablero) == 2):
-                print("Empate")
+                ganadorID = 0
                 repetir = False
                 break
             else:
                 print("")
 
-    print("Menu: \n1- Iniciar juego \n2- Volver a jugar \n3- Salir\n")
-    opcionMenu=int(input())
-    if(opcionMenu==1 or 2):
-        print()
 
-    elif(opcionMenu==3):
-        print("Gracias por jugar")
+    #Validamos el ganador para imprimir el final correspondiente
+    if(ganadorID == 0):
+        print("\n============== FIN DEL JUEGO ==============\n")
+        print("\nNo hay ganador, es un EMPATE")     
+        
+    else:
+        print("\n============== FIN DEL JUEGO ==============\n")
+        for cell in hojaPlayers["A"]:
+            if cell.value == ganadorID:
+                nombreGanador = hojaPlayers[f"B{cell.row}"].value #Asignamos el nombre del usuario al jugador1
+        print("El ganador es: ", nombreGanador)
+        print("\n")
 
-    print ("Juego terminado")
+        input("PULSE ENTER PARA CONTINUAR\n")
 
-    print("1- Volver a menu de juegos  2-Volver a menu de gato")
-    menuGrande=int(input())
+    #Actualizar información en excel
+    i = 0
+    for cell in hojaPlayers["A"]:
+          i += 1
+          if (cell.value == ganadorID):
+                #agregar victoria a jugador
+                ubicacionWinA = 'C'+ str(i) #colocamos la ubicación de la celda de Excel
+                datoCelda = int(hojaPlayers[ubicacionWinA].value) #Convertimos el valor a INT
+                victorias = datoCelda + 1 #Sumamos valor base con el gane
+                hojaPlayers[ubicacionWinA] = str(victorias) #insertamos el nuevo valor
+                    
+                #Agregar fecha actual
+                ubicacionFechaA = 'D'+ str(i) #colocamos la ubicación de la celda de Excel
+                now = datetime.now()
+                fecha = now.strftime('%d/%m/%Y %H:%M') #Usamos libreria datetime para la fecha
+                hojaPlayers[ubicacionFechaA] = str(fecha) #insertamos el nuevo valor
+                wb.save(filesheet)
+                break
 
-    if(menuGrande==2):
-        gatoGame()
-    elif(menuGrande==1):
-        print("aqui va lo del menu principal")
+
+    print("=================== REGISTRO HISTORICO AHORCADO ===================\n")
+    #Busca en la lista y se imprime los valores 
+    print("ID_USUARIO         WINS         ULTIMO JUEGO")
+    for select in range(2, hojaPlayers.max_row +1):
+         print(hojaPlayers[f"A{select}"].value, "                ",hojaPlayers[f"C{select}"].value, "       ",hojaPlayers[f"D{select}"].value, "\n") #imprimir jugadores       
+    
+    input("PULSE ENTER PARA CONTINUAR\n")
+
+    finalJuego()
+ 
+def finalJuego():
+    #Opciones de final del juego
+        print("\n1) ¿Desea volver a jugar? \n2) Volver al menú principal \n3) Salir")
+        seleccion = int(input())
+
+        if(seleccion == 1):
+            gatoGame()
+        elif(seleccion == 2):
+            import main
+            main.menuPrincipal()
+        else:
+            quit()
+
+

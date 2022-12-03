@@ -16,6 +16,15 @@ hojaPlayers = wb.get_sheet_by_name('Players')
 
 def ahorcado():
 
+       
+
+    print("==========================================\n")
+    print("==============JUEGO AHORCADO==============\n")
+    print("==========================================") 
+
+    input("\nPresione ENTER para iniciar")
+
+    print("\n==========SELECCION DE JUGADORES==========\n")
     letrasIncorrectas = ""
     #Valida cuanto jugadores existen
     for i in range(2, hojaPlayers.max_row+1):
@@ -30,9 +39,7 @@ def ahorcado():
             for j in range(1, hojaPlayers.max_column -4):
               celda = hojaPlayers.cell(row=i, column =j)
               print("ID:",celda.value, end = " ")
-
         print("\n")
-
         #Seleccionar jugador
         selectUno = input("Por favor, ingrese solamente el ID del jugador uno: ")
         print("")
@@ -49,21 +56,18 @@ def ahorcado():
 
         print("\n", "\n")
         print(jugadorUno," VS ", jugadorDos)
-        print("\n", "\n")
-
-        input("Presione ENTER")
-
-        print("===================================================")
-        print("El jugador 1 debe ingresar la palabra oculta",
+        print("\n==================INSTRUCCIONES===================")
+        print("\nEl jugador 1 debe ingresar la palabra oculta",
             "\nEl único caracter especial permitido es la ñ",
             "\nEl jugador 2 debe ingresar una letra",
             "\nSi la letra es correcta se marcará de lo",
             "\ncontrario se agregaráuna pieza al muñeco.",
             "\nSi logra adivinar la palabra GANA",
             "\nsino lo logra PIERDE el juego")
-        print("===================================================")
+        print("\n==================================================")
 
-        palabra = getpass.getpass("Ingrese la palabra secreta: ") #No se debe de ver
+        input("\nPresione ENTER para empezar")
+        palabra = getpass.getpass("\nIngrese la palabra secreta: ") #No se debe de ver
         intentos = 0
         intento = 0
         win = False
