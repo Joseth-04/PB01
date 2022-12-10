@@ -5,7 +5,6 @@ from datetime import datetime
 # Como leer un archivo de excel
 import openpyxl
 
-
 filesheet = "./Jugadores.xlsx"
 
 # Leer el archivo
