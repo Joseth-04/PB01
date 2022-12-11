@@ -356,60 +356,61 @@ def grupos():
     f = 0
     g = 0
     h = 0
+
     for cell in hojaParticipantes["A"]:
         x += 1
         
-        if cell.value == grupoA[i]:    
+        if i < 4 and cell.value == grupoA[i]:    
             ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
             datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
             list = [grupoA[i],datoCelda]
             resultadoGrupoA.append(list)
             i = i+1
             
-        if cell.value == grupoB[b]:    
+        if b < 4 and cell.value == grupoB[b]:    
             ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
             datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
-            list = [grupoB[i],datoCelda]
+            list = [grupoB[b],datoCelda]
             resultadoGrupoB.append(list)
             b = b+1
 
-        if cell.value == grupoC[c]:    
+        if c < 4 and cell.value == grupoC[c]:    
             ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
             datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
-            resultadoGrupoC.append(grupoA[i],datoCelda)
-            list = [grupoC[i],datoCelda]
+            resultadoGrupoC.append(grupoC[i],datoCelda)
+            list = [grupoC[c],datoCelda]
             resultadoGrupoC.append(list)
             c = c+1
 
-        if cell.value == grupoD[d]:    
+        if d < 4 and cell.value == grupoD[d]:    
             ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
             datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
             list = [grupoD[i],datoCelda]
             resultadoGrupoD.append(list)
             d = d + 1
 
-        if cell.value == grupoE[e]:    
+        if e < 4 and cell.value == grupoE[e]:    
             ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
             datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
             list = [grupoE[i],datoCelda]
             resultadoGrupoE.append(list)
             e = e + 1
 
-        if cell.value == grupoF[f]:    
+        if f < 4 and cell.value == grupoF[f]:    
             ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
             datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
             list = [grupoF[i],datoCelda]
             resultadoGrupoF.append(list)
             f = f + 1
 
-        if cell.value == grupoG[g]:    
+        if g < 4 and cell.value == grupoG[g]:    
             ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
             datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
             list = [grupoG[i],datoCelda]
             resultadoGrupoG.append(list)
             g = g + 1
 
-        if cell.value == grupoH[h]:    
+        if h < 4 and cell.value == grupoH[h]:    
             ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
             datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
             list = [grupoH[i],datoCelda]
