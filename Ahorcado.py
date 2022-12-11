@@ -15,8 +15,6 @@ hojaPlayers = wb.get_sheet_by_name('Players')
 
 def ahorcado():
 
-       
-
     print("==========================================\n")
     print("==============JUEGO AHORCADO==============\n")
     print("==========================================") 

@@ -11,7 +11,14 @@ hojaParticipantes = wb.get_sheet_by_name('Participantes')
 
 intento = True
 listaInicial = []
-
+enfrentamientoA = []
+enfrentamientoB = []
+enfrentamientoC = []
+enfrentamientoD = []
+enfrentamientoE = []
+enfrentamientoF = []
+enfrentamientoG = []
+enfrentamientoH = []
 
 for cell in hojaParticipantes["A"]: #Cantidad de columnas necesarias
     listaInicial.append(cell.value) #Agregar participante
@@ -41,73 +48,109 @@ def grupos():
 
     #Asignar enfrentamientos
     #A
-    enfrentamientoA = [[grupoA[0],0,0,grupoA[1],0,0]]
-    vsGrupoA_A = [grupoA[0],0,0,grupoA[1],0,0]
-    vsGrupoA_B = [grupoA[0],random.randint(0,10),grupoA[2],random.randint(0,10)]
-    vsGrupoA_C = [grupoA[0],random.randint(0,10),grupoA[3],random.randint(0,10)]
-    vsGrupoA_D = [grupoA[1],random.randint(0,10),grupoA[2],random.randint(0,10)]
-    vsGrupoA_E = [grupoA[1],random.randint(0,10),grupoA[3],random.randint(0,10)]
-    vsGrupoA_F = [grupoA[2],random.randint(0,10),grupoA[3],random.randint(0,10)]
+    enfrentamientoA = [[grupoA[0],0,0,grupoA[1],0,0],
+                    [grupoA[0],0,0,grupoA[2],0,0],
+                    [grupoA[0],0,0,grupoA[3],0,0],
+                    [grupoA[1],0,0,grupoA[2],0,0],
+                    [grupoA[1],0,0,grupoA[3],0,0],
+                    [grupoA[2],0,0,grupoA[3],0,0]]
     
     #B
-    vsGrupoB_A = [grupoB[0],random.randint(0,10),grupoB[1],random.randint(0,10)]
-    vsGrupoB_B = [grupoB[0],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoB_C = [grupoB[0],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoB_D = [grupoB[1],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoB_E = [grupoB[1],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoB_F = [grupoB[2],random.randint(0,10),grupoB[3],random.randint(0,10)]
+    enfrentamientoB = [[grupoB[0],0,0,grupoB[1],0,0],
+                    [grupoB[0],0,0,grupoB[2],0,0],
+                    [grupoB[0],0,0,grupoB[3],0,0],
+                    [grupoB[1],0,0,grupoB[2],0,0],
+                    [grupoB[1],0,0,grupoB[3],0,0],
+                    [grupoB[2],0,0,grupoB[3],0,0]]
     
     #C
-    vsGrupoC_A = [grupoB[0],random.randint(0,10),grupoB[1],random.randint(0,10)]
-    vsGrupoC_B = [grupoB[0],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoC_C = [grupoB[0],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoC_D = [grupoB[1],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoC_E = [grupoB[1],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoC_F = [grupoB[2],random.randint(0,10),grupoB[3],random.randint(0,10)]
+    enfrentamientoC = [[grupoC[0],0,0,grupoC[1],0,0],
+                    [grupoC[0],0,0,grupoC[2],0,0],
+                    [grupoC[0],0,0,grupoC[3],0,0],
+                    [grupoC[1],0,0,grupoC[2],0,0],
+                    [grupoC[1],0,0,grupoC[3],0,0],
+                    [grupoC[2],0,0,grupoC[3],0,0]]
     
     #D
-    vsGrupoD_A = [grupoB[0],random.randint(0,10),grupoB[1],random.randint(0,10)]
-    vsGrupoD_B = [grupoB[0],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoD_C = [grupoB[0],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoD_D = [grupoB[1],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoD_E = [grupoB[1],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoD_F = [grupoB[2],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    
-    #E
-    vsGrupoE_A = [grupoB[0],random.randint(0,10),grupoB[1],random.randint(0,10)]
-    vsGrupoE_B = [grupoB[0],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoE_C = [grupoB[0],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoE_D = [grupoB[1],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoE_E = [grupoB[1],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoE_F = [grupoB[2],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    
-    #F
-    vsGrupoF_A = [grupoB[0],random.randint(0,10),grupoB[1],random.randint(0,10)]
-    vsGrupoF_B = [grupoB[0],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoF_C = [grupoB[0],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoF_D = [grupoB[1],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoF_E = [grupoB[1],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoF_F = [grupoB[2],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    
-    #G
-    vsGrupoG_A = [grupoB[0],random.randint(0,10),grupoB[1],random.randint(0,10)]
-    vsGrupoG_B = [grupoB[0],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoG_C = [grupoB[0],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoG_D = [grupoB[1],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoG_E = [grupoB[1],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoG_F = [grupoB[2],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    
-    #H
-    vsGrupoH_A = [grupoB[0],random.randint(0,10),grupoB[1],random.randint(0,10)]
-    vsGrupoH_B = [grupoB[0],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoH_C = [grupoB[0],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoH_D = [grupoB[1],random.randint(0,10),grupoB[2],random.randint(0,10)]
-    vsGrupoH_E = [grupoB[1],random.randint(0,10),grupoB[3],random.randint(0,10)]
-    vsGrupoH_F = [grupoB[2],random.randint(0,10),grupoB[3],random.randint(0,10)]
+    enfrentamientoD = [[grupoD[0],0,0,grupoD[1],0,0],
+                    [grupoD[0],0,0,grupoD[2],0,0],
+                    [grupoD[0],0,0,grupoD[3],0,0],
+                    [grupoD[1],0,0,grupoD[2],0,0],
+                    [grupoD[1],0,0,grupoD[3],0,0],
+                    [grupoD[2],0,0,grupoD[3],0,0]]
 
-def simulacion_grupos():
+    #E
+    enfrentamientoE = [[grupoE[0],0,0,grupoE[1],0,0],
+                    [grupoE[0],0,0,grupoE[2],0,0],
+                    [grupoE[0],0,0,grupoE[3],0,0],
+                    [grupoE[1],0,0,grupoE[2],0,0],
+                    [grupoE[1],0,0,grupoE[3],0,0],
+                    [grupoE[2],0,0,grupoE[3],0,0]]
+
+    #F
+    enfrentamientoF = [[grupoF[0],0,0,grupoF[1],0,0],
+                    [grupoF[0],0,0,grupoF[2],0,0],
+                    [grupoF[0],0,0,grupoF[3],0,0],
+                    [grupoF[1],0,0,grupoF[2],0,0],
+                    [grupoF[1],0,0,grupoF[3],0,0],
+                    [grupoF[2],0,0,grupoF[3],0,0]]
+
+    #G
+    enfrentamientoG = [[grupoG[0],0,0,grupoG[1],0,0],
+                    [grupoG[0],0,0,grupoG[2],0,0],
+                    [grupoG[0],0,0,grupoG[3],0,0],
+                    [grupoG[1],0,0,grupoG[2],0,0],
+                    [grupoG[1],0,0,grupoG[3],0,0],
+                    [grupoG[2],0,0,grupoG[3],0,0]]
+
+
+    #H
+    enfrentamientoH = [[grupoH[0],0,0,grupoH[1],0,0],
+                    [grupoH[0],0,0,grupoH[2],0,0],
+                    [grupoH[0],0,0,grupoH[3],0,0],
+                    [grupoH[1],0,0,grupoH[2],0,0],
+                    [grupoH[1],0,0,grupoH[3],0,0],
+                    [grupoH[2],0,0,grupoH[3],0,0]]
+
     #puntos
-    print()
+    for i in range(6):
+        golA_A = random.randint(0, 10)
+        golA_B = random.randint(0, 10)
+        
+        if(golA_A > golA_B):
+            enfrentamientoA[i][2] = 3
+        elif(golA_A == golA_B):
+            enfrentamientoA[i][2] = 1
+            enfrentamientoA[i][5] = 1
+        else:
+            enfrentamientoA[i][5] = 3
+
+        enfrentamientoA[i][1] = golA_A
+        enfrentamientoA[i][4] = golA_B
+
+         #Actualizar información
+
+        x = 0
+        participante1 = enfrentamientoA[i][0]
+        participante2 = enfrentamientoA[i][3]
+        for cell in hojaParticipantes["A"]:
+            x += 1
+            if (cell.value == participante1):
+                #Actualizar puntos
+                ubicacionPuntosA_A = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptoA_A = int(hojaParticipantes[ubicacionPuntosA_A].value) + enfrentamientoA[i][2]
+                hojaParticipantes[ubicacionPuntosA_A] = str(ptoA_A) #insertamos el nuevo valor
+                wb.save(filesheet)
+                
+            if (cell.value == participante2):
+                #Actualizar puntos
+                ubicacionPuntosA_B = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptoA_B = int(hojaParticipantes[ubicacionPuntosA_B].value) + enfrentamientoA[i][5]
+                hojaParticipantes[ubicacionPuntosA_B] = str(ptoA_B) #insertamos el nuevo valor
+                wb.save(filesheet)
+                
+
+    print(enfrentamientoA)
 
 def sub_menu():
     while(intento):
@@ -149,3 +192,5 @@ def modificar_participantes():
 
 def reorganizar_grupos():
     print()
+
+grupos()
