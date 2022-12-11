@@ -20,6 +20,13 @@ enfrentamientoF = []
 enfrentamientoG = []
 enfrentamientoH = []
 
+x = 0
+for cell in hojaParticipantes["A"]:
+    x += 1
+    ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+    hojaParticipantes[ubicacionPto] = str(0) #insertamos el nuevo valor
+    wb.save(filesheet)
+
 for cell in hojaParticipantes["A"]: #Cantidad de columnas necesarias
     listaInicial.append(cell.value) #Agregar participante
 
@@ -114,43 +121,222 @@ def grupos():
 
     #puntos
     for i in range(6):
-        golA_A = random.randint(0, 10)
-        golA_B = random.randint(0, 10)
+        goles = [random.randint(0, 10),random.randint(0, 10), #Grupo A
+                random.randint(0, 10),random.randint(0, 10), #Grupo B
+                random.randint(0, 10),random.randint(0, 10), #Grupo C
+                random.randint(0, 10),random.randint(0, 10), #Grupo D
+                random.randint(0, 10),random.randint(0, 10), #Grupo E
+                random.randint(0, 10),random.randint(0, 10), #Grupo F
+                random.randint(0, 10),random.randint(0, 10), #Grupo G
+                random.randint(0, 10),random.randint(0, 10)] #Grupo H
         
-        if(golA_A > golA_B):
+        if(goles[0] > goles[1]):
             enfrentamientoA[i][2] = 3
-        elif(golA_A == golA_B):
+        elif(goles[0] == goles[1]):
             enfrentamientoA[i][2] = 1
             enfrentamientoA[i][5] = 1
         else:
             enfrentamientoA[i][5] = 3
+        
+        if(goles[2] > goles[3]):
+            enfrentamientoB[i][2] = 3
+        elif(goles[2] == goles[3]):
+            enfrentamientoB[i][2] = 1
+            enfrentamientoB[i][5] = 1
+        else:
+            enfrentamientoB[i][5] = 3
+        
+        if(goles[4] > goles[5]):
+            enfrentamientoC[i][2] = 3
+        elif(goles[4] == goles[5]):
+            enfrentamientoC[i][2] = 1
+            enfrentamientoC[i][5] = 1
+        else:
+            enfrentamientoC[i][5] = 3
+        
+        if(goles[6] > goles[7]):
+            enfrentamientoD[i][2] = 3
+        elif(goles[6] == goles[7]):
+            enfrentamientoD[i][2] = 1
+            enfrentamientoD[i][5] = 1
+        else:
+            enfrentamientoD[i][5] = 3
+        
+        if(goles[8] > goles[9]):
+            enfrentamientoE[i][2] = 3
+        elif(goles[8] == goles[9]):
+            enfrentamientoE[i][2] = 1
+            enfrentamientoE[i][5] = 1
+        else:
+            enfrentamientoE[i][5] = 3
+        
+        if(goles[10] > goles[11]):
+            enfrentamientoF[i][2] = 3
+        elif(goles[10] == goles[11]):
+            enfrentamientoF[i][2] = 1
+            enfrentamientoF[i][5] = 1
+        else:
+            enfrentamientoF[i][5] = 3
+        
+        if(goles[12] > goles[13]):
+            enfrentamientoG[i][2] = 3
+        elif(goles[12] == goles[13]):
+            enfrentamientoG[i][2] = 1
+            enfrentamientoG[i][5] = 1
+        else:
+            enfrentamientoG[i][5] = 3
+        
+        if(goles[14] > goles[15]):
+            enfrentamientoH[i][2] = 3
+        elif(goles[14] == goles[15]):
+            enfrentamientoH[i][2] = 1
+            enfrentamientoH[i][5] = 1
+        else:
+            enfrentamientoH[i][5] = 3
 
-        enfrentamientoA[i][1] = golA_A
-        enfrentamientoA[i][4] = golA_B
 
-         #Actualizar información
+        enfrentamientoA[i][1] = goles[0]
+        enfrentamientoA[i][4] = goles[1]
+        enfrentamientoB[i][1] = goles[2]
+        enfrentamientoB[i][4] = goles[3]
+        enfrentamientoC[i][1] = goles[4]
+        enfrentamientoC[i][4] = goles[5]
+        enfrentamientoD[i][1] = goles[6]
+        enfrentamientoD[i][4] = goles[7]
+        enfrentamientoE[i][1] = goles[8]
+        enfrentamientoE[i][4] = goles[9]
+        enfrentamientoF[i][1] = goles[10]
+        enfrentamientoF[i][4] = goles[11]
+        enfrentamientoG[i][1] = goles[12]
+        enfrentamientoG[i][4] = goles[13]
+        enfrentamientoH[i][1] = goles[14]
+        enfrentamientoH[i][4] = goles[15]
 
+        #Actualizar información
         x = 0
-        participante1 = enfrentamientoA[i][0]
-        participante2 = enfrentamientoA[i][3]
+        participantes = [enfrentamientoA[i][0], enfrentamientoA[i][3],
+                        enfrentamientoB[i][0], enfrentamientoB[i][3],
+                        enfrentamientoC[i][0], enfrentamientoC[i][3],
+                        enfrentamientoD[i][0], enfrentamientoD[i][3],
+                        enfrentamientoE[i][0], enfrentamientoE[i][3],
+                        enfrentamientoF[i][0], enfrentamientoF[i][3],
+                        enfrentamientoG[i][0], enfrentamientoG[i][3],
+                        enfrentamientoH[i][0], enfrentamientoH[i][3]]
+        
         for cell in hojaParticipantes["A"]:
             x += 1
-            if (cell.value == participante1):
+            if (cell.value == participantes[0]):
                 #Actualizar puntos
-                ubicacionPuntosA_A = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
-                ptoA_A = int(hojaParticipantes[ubicacionPuntosA_A].value) + enfrentamientoA[i][2]
-                hojaParticipantes[ubicacionPuntosA_A] = str(ptoA_A) #insertamos el nuevo valor
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoA[i][2]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
                 
-            if (cell.value == participante2):
+            elif (cell.value == participantes[1]):
                 #Actualizar puntos
-                ubicacionPuntosA_B = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
-                ptoA_B = int(hojaParticipantes[ubicacionPuntosA_B].value) + enfrentamientoA[i][5]
-                hojaParticipantes[ubicacionPuntosA_B] = str(ptoA_B) #insertamos el nuevo valor
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoA[i][5]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
-                
 
-    print(enfrentamientoA)
+            if (cell.value == participantes[2]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoB[i][2]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+                
+            elif (cell.value == participantes[3]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoB[i][5]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+
+            if (cell.value == participantes[4]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoC[i][2]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+                
+            elif (cell.value == participantes[5]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoC[i][5]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+
+            if (cell.value == participantes[6]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoD[i][2]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+                
+            elif (cell.value == participantes[7]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoD[i][5]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+
+            if (cell.value == participantes[8]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoE[i][2]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+                
+            elif (cell.value == participantes[9]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoE[i][5]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+
+            if (cell.value == participantes[10]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoF[i][2]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+                
+            elif (cell.value == participantes[11]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoF[i][5]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+
+            if (cell.value == participantes[12]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoG[i][2]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+                
+            elif (cell.value == participantes[13]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoG[i][5]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+
+            if (cell.value == participantes[14]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoH[i][2]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+                
+            elif (cell.value == participantes[15]):
+                #Actualizar puntos
+                ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+                ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoH[i][5]
+                hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
+                wb.save(filesheet)
+                
 
 def sub_menu():
     while(intento):

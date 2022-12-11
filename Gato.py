@@ -176,10 +176,21 @@ def gatoGame():
         if(winDos == False):
             print("\n")
             print("Turno de: ", jugadorUno)
-            fila = int(input("Coloque la fila donde quiere colcar la X:")) - 1
-            columna = int(input("Coloque la Columna donde quiere colcar la X:")) - 1
-            tablero[fila][columna] = "X"
-            pintarTablero(tablero)
+            repeticion = 1
+            while repeticion == 1:
+                fila = int(input("Coloque la fila donde quiere colcar la X:")) - 1
+                columna = int(input("Coloque la Columna donde quiere colcar la X:")) - 1
+                if tablero[fila][columna] == "X" or tablero[fila][columna] == "O":
+                    print("========================================================\n")
+                    print("LA POSICION YA HA SIDO SELECCIONADA ANTERIORMENTE\n")
+                    print("========================================================\n")
+                    repeticion = 1
+                    input("PRESIONE ENTER PARA INTENTARLO DE NUEVO\n")
+                else:     
+                    tablero[fila][columna] = "X"
+                    pintarTablero(tablero)
+                    repeticion = 0
+
 
             if (verificar(tablero) == 1):
                 ganadorID = jugadorUnoID
@@ -197,10 +208,21 @@ def gatoGame():
         if (winUno == False):
             print("\n")
             print("Turno de: ", jugadorDos)
-            fila = int(input("Coloque la fila donde quiere colcar la O:")) - 1
-            columna = int(input("Coloque la Columna donde quiere colcar la O:")) - 1
-            tablero[fila][columna] = "O"
-            pintarTablero(tablero)
+            repeticion = 1
+            while repeticion == 1:
+                fila = int(input("Coloque la fila donde quiere colcar la O:")) - 1
+                columna = int(input("Coloque la Columna donde quiere colcar la O:")) - 1
+                if tablero[fila][columna] == "X" or tablero[fila][columna] == "O":
+                    print("========================================================\n")
+                    print("LA POSICION YA HA SIDO SELECCIONADA ANTERIORMENTE\n")
+                    print("========================================================\n")
+                    repeticion = 1
+                    input("PRESIONE ENTER PARA INTENTARLO DE NUEVO\n")
+                else:               
+                    tablero[fila][columna] = "O"
+                    pintarTablero(tablero)
+                    repeticion = 0
+            
                 
             if (verificar(tablero) == 1):
                 ganadorID = jugadorDosID
@@ -273,5 +295,3 @@ def finalJuego():
             main.menuPrincipal()
         else:
             quit()
-
-

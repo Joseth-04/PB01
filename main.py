@@ -18,6 +18,7 @@ def volverMenuP():
     menuPrincipal()
   
 def menuPrincipal():
+    selecMenu = True
     while(selecMenu):
         print("=========================================\n")
         print("============CENTRAL DE JUEGOS============\n")
