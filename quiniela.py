@@ -19,6 +19,14 @@ enfrentamientoE = []
 enfrentamientoF = []
 enfrentamientoG = []
 enfrentamientoH = []
+resultadoGrupoA = []
+resultadoGrupoB = []
+resultadoGrupoC = []
+resultadoGrupoD = []
+resultadoGrupoE = []
+resultadoGrupoF = []
+resultadoGrupoG = []
+resultadoGrupoH = []
 
 x = 0
 for cell in hojaParticipantes["A"]:
@@ -40,7 +48,7 @@ grupoG = [listaInicial[24],listaInicial[25],listaInicial[26],listaInicial[27]]
 grupoH = [listaInicial[28],listaInicial[29],listaInicial[30],listaInicial[31]]
 
 #Alterar lista
-random.shuffle(listaInicial)
+#random.shuffle(listaInicial)
 
 def grupos():
     #Asignamos participantes por grupo
@@ -337,6 +345,91 @@ def grupos():
                 hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
                 
+
+    #Grupos finales
+    x = 0
+    i = 0
+    b = 0
+    c = 0
+    d = 0
+    e = 0
+    f = 0
+    g = 0
+    h = 0
+    for cell in hojaParticipantes["A"]:
+        x += 1
+        
+        if cell.value == grupoA[i]:    
+            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
+            list = [grupoA[i],datoCelda]
+            resultadoGrupoA.append(list)
+            i = i+1
+            
+        if cell.value == grupoB[b]:    
+            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
+            list = [grupoB[i],datoCelda]
+            resultadoGrupoB.append(list)
+            b = b+1
+
+        if cell.value == grupoC[c]:    
+            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
+            resultadoGrupoC.append(grupoA[i],datoCelda)
+            list = [grupoC[i],datoCelda]
+            resultadoGrupoC.append(list)
+            c = c+1
+
+        if cell.value == grupoD[d]:    
+            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
+            list = [grupoD[i],datoCelda]
+            resultadoGrupoD.append(list)
+            d = d + 1
+
+        if cell.value == grupoE[e]:    
+            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
+            list = [grupoE[i],datoCelda]
+            resultadoGrupoE.append(list)
+            e = e + 1
+
+        if cell.value == grupoF[f]:    
+            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
+            list = [grupoF[i],datoCelda]
+            resultadoGrupoF.append(list)
+            f = f + 1
+
+        if cell.value == grupoG[g]:    
+            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
+            list = [grupoG[i],datoCelda]
+            resultadoGrupoG.append(list)
+            g = g + 1
+
+        if cell.value == grupoH[h]:    
+            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
+            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
+            list = [grupoH[i],datoCelda]
+            resultadoGrupoH.append(list)
+            h = h + 1
+    
+
+    print(resultadoGrupoA)
+    print(resultadoGrupoB)
+    print(resultadoGrupoC)
+    print(resultadoGrupoD)
+    print(resultadoGrupoE)
+    print(resultadoGrupoF)
+    print(resultadoGrupoG)
+    print(resultadoGrupoH)
+            
+
+
+
+    
 
 def sub_menu():
     while(intento):
