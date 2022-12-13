@@ -11,22 +11,14 @@ hojaParticipantes = wb.get_sheet_by_name('Participantes')
 
 intento = True
 listaInicial = []
-enfrentamientoA = []
-enfrentamientoB = []
-enfrentamientoC = []
-enfrentamientoD = []
-enfrentamientoE = []
-enfrentamientoF = []
-enfrentamientoG = []
-enfrentamientoH = []
-resultadoGrupoA = []
-resultadoGrupoB = []
-resultadoGrupoC = []
-resultadoGrupoD = []
-resultadoGrupoE = []
-resultadoGrupoF = []
-resultadoGrupoG = []
-resultadoGrupoH = []
+resGA = []
+resGB = []
+resGC = []
+resGD = []
+resGE = []
+resGF = []
+resGG = []
+resGH = []
 
 x = 0
 for cell in hojaParticipantes["A"]:
@@ -247,7 +239,7 @@ def grupos():
                 hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
 
-            if (cell.value == participantes[2]):
+            elif (cell.value == participantes[2]):
                 #Actualizar puntos
                 ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
                 ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoB[i][2]
@@ -261,7 +253,7 @@ def grupos():
                 hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
 
-            if (cell.value == participantes[4]):
+            elif (cell.value == participantes[4]):
                 #Actualizar puntos
                 ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
                 ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoC[i][2]
@@ -275,7 +267,7 @@ def grupos():
                 hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
 
-            if (cell.value == participantes[6]):
+            elif (cell.value == participantes[6]):
                 #Actualizar puntos
                 ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
                 ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoD[i][2]
@@ -289,7 +281,7 @@ def grupos():
                 hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
 
-            if (cell.value == participantes[8]):
+            elif (cell.value == participantes[8]):
                 #Actualizar puntos
                 ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
                 ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoE[i][2]
@@ -303,7 +295,7 @@ def grupos():
                 hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
 
-            if (cell.value == participantes[10]):
+            elif (cell.value == participantes[10]):
                 #Actualizar puntos
                 ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
                 ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoF[i][2]
@@ -317,7 +309,7 @@ def grupos():
                 hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
 
-            if (cell.value == participantes[12]):
+            elif (cell.value == participantes[12]):
                 #Actualizar puntos
                 ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
                 ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoG[i][2]
@@ -331,7 +323,7 @@ def grupos():
                 hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
 
-            if (cell.value == participantes[14]):
+            elif (cell.value == participantes[14]):
                 #Actualizar puntos
                 ubicacionPuntos = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
                 ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoH[i][2]
@@ -344,95 +336,227 @@ def grupos():
                 ptos = int(hojaParticipantes[ubicacionPuntos].value) + enfrentamientoH[i][5]
                 hojaParticipantes[ubicacionPuntos] = str(ptos) #insertamos el nuevo valor
                 wb.save(filesheet)
-                
 
-    #Grupos finales
-    x = 0
-    i = 0
-    b = 0
-    c = 0
-    d = 0
-    e = 0
-    f = 0
-    g = 0
-    h = 0
+    contador = 0 #cargar datos de los resultados para semifinales
+    for cont in range(1, 33):
+        ubicacionEquipoA = 'A'+ str(cont) #colocamos la ubicación de la celda de Excel
+        ubicacionEquipoB = 'B'+ str(cont) #colocamos la ubicación de la celda de Excel
+        if(hojaParticipantes[ubicacionEquipoA].value == grupoA[contador]):
+            resGA.append(hojaParticipantes[ubicacionEquipoA].value)
+            resGA.append(hojaParticipantes[ubicacionEquipoB].value)
+            contador += 1
+            if(contador == 4):
+                contador = 0
 
-    for cell in hojaParticipantes["A"]:
-        x += 1
+        elif(hojaParticipantes[ubicacionEquipoA].value == grupoB[contador]):
+            resGB.append(hojaParticipantes[ubicacionEquipoA].value)
+            resGB.append(hojaParticipantes[ubicacionEquipoB].value)
+            contador += 1
+            if(contador == 4):
+                contador = 0
+
+        elif(hojaParticipantes[ubicacionEquipoA].value == grupoC[contador]):
+            resGC.append(hojaParticipantes[ubicacionEquipoA].value)
+            resGC.append(hojaParticipantes[ubicacionEquipoB].value)
+            contador += 1
+            if(contador == 4):
+                contador = 0
+
+        elif(hojaParticipantes[ubicacionEquipoA].value == grupoD[contador]):
+            resGD.append(hojaParticipantes[ubicacionEquipoA].value)
+            resGD.append(hojaParticipantes[ubicacionEquipoB].value)
+            contador += 1
+            if(contador == 4):
+                contador = 0
+
+        elif(hojaParticipantes[ubicacionEquipoA].value == grupoE[contador]):
+            resGE.append(hojaParticipantes[ubicacionEquipoA].value)
+            resGE.append(hojaParticipantes[ubicacionEquipoB].value)
+            contador += 1
+            if(contador == 4):
+                contador = 0
+
+        elif(hojaParticipantes[ubicacionEquipoA].value == grupoF[contador]):
+            resGF.append(hojaParticipantes[ubicacionEquipoA].value)
+            resGF.append(hojaParticipantes[ubicacionEquipoB].value)
+            contador += 1
+            if(contador == 4):
+                contador = 0
+
+        elif(hojaParticipantes[ubicacionEquipoA].value == grupoG[contador]):
+            resGG.append(hojaParticipantes[ubicacionEquipoA].value)
+            resGG.append(hojaParticipantes[ubicacionEquipoB].value)
+            contador += 1
+            if(contador == 4):
+                contador = 0
+
+        elif(hojaParticipantes[ubicacionEquipoA].value == grupoH[contador]):
+            resGH.append(hojaParticipantes[ubicacionEquipoA].value)
+            resGH.append(hojaParticipantes[ubicacionEquipoB].value)
+            contador += 1
+            if(contador == 4):
+                contador = 0
         
-        if i < 4 and cell.value == grupoA[i]:    
-            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
-            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
-            list = [grupoA[i],datoCelda]
-            resultadoGrupoA.append(list)
-            i = i+1
-            
-        if b < 4 and cell.value == grupoB[b]:    
-            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
-            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
-            list = [grupoB[b],datoCelda]
-            resultadoGrupoB.append(list)
-            b = b+1
+    doble = 1
+    semiptA = 0
+    semiptB = 0
+    semiEqA = ""
+    semiEqB = ""
+    semiAA = []
+    print("**Grupo A**")
+    print("Equipo       Puntos")
+    for x in range(0, 8, 2):
+        print(resGA[x], " ....... ", resGA[doble])
+        if(int(resGA[doble]) >= semiptA):
+            semiptA = int(resGA[doble])
+            semiEqA = resGA[x]
+        
+        if(int(resGA[doble]) <= semiptA and int(resGA[doble]) > semiptB and semiEqB != semiEqA):
+            semiptB = int(resGA[doble])
+            semiEqB = resGA[x]
+        doble += 2
+    semiAA.append(semiEqA)
+    semiAA.append(semiEqB)
 
-        if c < 4 and cell.value == grupoC[c]:    
-            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
-            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
-            resultadoGrupoC.append(grupoC[i],datoCelda)
-            list = [grupoC[c],datoCelda]
-            resultadoGrupoC.append(list)
-            c = c+1
+    input("\npresione ENTER para continuar\n")
+        
+    doble = 1
+    print("**Grupo B**")
+    print("Equipo       Puntos")
+    for x in range(0, 8, 2):
+        print(resGB[x], " ....... ", resGB[doble])
+        print(resGA[x], " ....... ", resGA[doble])
+        if(int(resGA[doble]) >= semiptA):
+            semiptA = int(resGA[doble])
+            semiEqA = resGA[x]
+        
+        if(int(resGA[doble]) <= semiptA and int(resGA[doble]) > semiptB and semiEqB != semiEqA):
+            semiptB = int(resGA[doble])
+            semiEqB = resGA[x]
+        doble += 2
+    semiAA.append(semiEqA)
+    semiAA.append(semiEqB)
 
-        if d < 4 and cell.value == grupoD[d]:    
-            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
-            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
-            list = [grupoD[i],datoCelda]
-            resultadoGrupoD.append(list)
-            d = d + 1
+    input("\npresione ENTER para continuar\n")
+        
+    doble = 1
+    print("**Grupo C**")
+    print("Equipo       ----- Puntos -----")
+    for x in range(0, 8, 2):
+        print(resGC[x], " ....... ", resGC[doble])
+        print(resGA[x], " ....... ", resGA[doble])
+        if(int(resGA[doble]) >= semiptA):
+            semiptA = int(resGA[doble])
+            semiEqA = resGA[x]
+        
+        if(int(resGA[doble]) <= semiptA and int(resGA[doble]) > semiptB and semiEqB != semiEqA):
+            semiptB = int(resGA[doble])
+            semiEqB = resGA[x]
+        doble += 2
+    semiAA.append(semiEqA)
+    semiAA.append(semiEqB)
 
-        if e < 4 and cell.value == grupoE[e]:    
-            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
-            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
-            list = [grupoE[i],datoCelda]
-            resultadoGrupoE.append(list)
-            e = e + 1
+    input("\npresione ENTER para continuar\n")
+        
+    doble = 1
+    print("**Grupo D**")
+    print("Equipo       ----- Puntos -----")
+    for x in range(0, 8, 2):
+        print(resGD[x], " ....... ", resGD[doble])
+        print(resGA[x], " ....... ", resGA[doble])
+        if(int(resGA[doble]) >= semiptA):
+            semiptA = int(resGA[doble])
+            semiEqA = resGA[x]
+        
+        if(int(resGA[doble]) <= semiptA and int(resGA[doble]) > semiptB and semiEqB != semiEqA):
+            semiptB = int(resGA[doble])
+            semiEqB = resGA[x]
+        doble += 2
+    semiAA.append(semiEqA)
+    semiAA.append(semiEqB)
 
-        if f < 4 and cell.value == grupoF[f]:    
-            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
-            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
-            list = [grupoF[i],datoCelda]
-            resultadoGrupoF.append(list)
-            f = f + 1
+    input("\npresione ENTER para continuar\n")
+        
+    doble = 1
+    print("**Grupo E**")
+    print("Equipo       ----- Puntos -----")
+    for x in range(0, 8, 2):
+        print(resGE[x], " ....... ", resGE[doble])
+        print(resGA[x], " ....... ", resGA[doble])
+        if(int(resGA[doble]) >= semiptA):
+            semiptA = int(resGA[doble])
+            semiEqA = resGA[x]
+        
+        if(int(resGA[doble]) <= semiptA and int(resGA[doble]) > semiptB and semiEqB != semiEqA):
+            semiptB = int(resGA[doble])
+            semiEqB = resGA[x]
+        doble += 2
+    semiAA.append(semiEqA)
+    semiAA.append(semiEqB)
 
-        if g < 4 and cell.value == grupoG[g]:    
-            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
-            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
-            list = [grupoG[i],datoCelda]
-            resultadoGrupoG.append(list)
-            g = g + 1
+    input("\npresione ENTER para continuar\n")
+        
+    doble = 1
+    print("**Grupo F**")
+    print("Equipo       ----- Puntos -----")
+    for x in range(0, 8, 2):
+        print(resGF[x], " ....... ", resGF[doble])
+        print(resGA[x], " ....... ", resGA[doble])
+        if(int(resGA[doble]) >= semiptA):
+            semiptA = int(resGA[doble])
+            semiEqA = resGA[x]
+        
+        if(int(resGA[doble]) <= semiptA and int(resGA[doble]) > semiptB and semiEqB != semiEqA):
+            semiptB = int(resGA[doble])
+            semiEqB = resGA[x]
+        doble += 2
+    semiAA.append(semiEqA)
+    semiAA.append(semiEqB)
 
-        if h < 4 and cell.value == grupoH[h]:    
-            ubicacionPto = 'B'+ str(x) #colocamos la ubicación de la celda de Excel
-            datoCelda = int(hojaParticipantes[ubicacionPto].value) #Convertimos el valor a INT
-            list = [grupoH[i],datoCelda]
-            resultadoGrupoH.append(list)
-            h = h + 1
-    
+    input("\npresione ENTER para continuar\n")
+        
+    doble = 1
+    print("**Grupo G**")
+    print("Equipo       ----- Puntos -----")
+    for x in range(0, 8, 2):
+        print(resGG[x], " ....... ", resGG[doble])
+        print(resGA[x], " ....... ", resGA[doble])
+        if(int(resGA[doble]) >= semiptA):
+            semiptA = int(resGA[doble])
+            semiEqA = resGA[x]
+        
+        if(int(resGA[doble]) <= semiptA and int(resGA[doble]) > semiptB and semiEqB != semiEqA):
+            semiptB = int(resGA[doble])
+            semiEqB = resGA[x]
+        doble += 2
+    semiAA.append(semiEqA)
+    semiAA.append(semiEqB)
 
-    print(resultadoGrupoA)
-    print(resultadoGrupoB)
-    print(resultadoGrupoC)
-    print(resultadoGrupoD)
-    print(resultadoGrupoE)
-    print(resultadoGrupoF)
-    print(resultadoGrupoG)
-    print(resultadoGrupoH)
-            
+    input("\npresione ENTER para continuar\n")
+        
+    doble = 1
+    print("**Grupo H**")
+    print("Equipo       ----- Puntos -----")
+    for x in range(0, 8, 2):
+        print(resGH[x], " ....... ", resGH[doble])
+        print(resGA[x], " ....... ", resGA[doble])
+        if(int(resGA[doble]) >= semiptA):
+            semiptA = int(resGA[doble])
+            semiEqA = resGA[x]
+        
+        if(int(resGA[doble]) <= semiptA and int(resGA[doble]) > semiptB and semiEqB != semiEqA):
+            semiptB = int(resGA[doble])
+            semiEqB = resGA[x]
+        doble += 2
+    semiAA.append(semiEqA)
+    semiAA.append(semiEqB)
 
+    input("\npresione ENTER para continuar\n")
 
-
-    
+    print(semiAA)
 
 def sub_menu():
+    intento = True
     while(intento):
         print("======== QUINIELA MUNDIALISTA ========\n")
         print ("\n1) Buscar al Campeón del Mundo",

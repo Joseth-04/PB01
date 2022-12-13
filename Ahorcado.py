@@ -58,13 +58,14 @@ def ahorcado():
             "\nEl único caracter especial permitido es la ñ",
             "\nEl jugador 2 debe ingresar una letra",
             "\nSi la letra es correcta se marcará de lo",
-            "\ncontrario se agregaráuna pieza al muñeco.",
+            "\ncontrario se agregará una pieza al muñeco.",
             "\nSi logra adivinar la palabra GANA",
             "\nsino lo logra PIERDE el juego")
         print("\n==================================================")
 
         input("\nPresione ENTER para empezar")
         palabra = getpass.getpass("\nIngrese la palabra secreta: ") #No se debe de ver
+        palabra = palabra.upper()
         intentos = 0
         intento = 0
         win = False
@@ -134,10 +135,20 @@ def ahorcado():
             #nuevo
             print(tableroAhorcado[intentos])
             print ("Espacios: ", espacios)
-
-            print("\n")
-            letra = input("Ingrese una letra: ")
-            print("\n")
+            repetir = 1
+            while repetir == 1:
+                print("\n")
+                letra = input("Ingrese una letra: ")
+                letra = letra.upper()
+                print("\n")
+                for i in range(len(palabra)):
+                    if (espacios[i] == letra):
+                        print("\n=====================ALERTA======================")
+                        print("\nLa letra ya ha sido ingresada, INTENTELO DE NUEVO\n")
+                        print("=================================================")
+                        input("\nPresione ENTER para continuar")
+                    else:
+                        repetir = 0
 
             for i in range(len(palabra)):
                 if (palabra[i] in letra):
@@ -206,7 +217,8 @@ def ahorcado():
         finalJuego()
         
     else:
-        print("No existen jugadores suficientes para jugar")
+        print("No existen jugadores suficientes para jugar\n")
+        input("PULSE ENTER PARA CONTINUAR\n")
 
 
 def finalJuego():
